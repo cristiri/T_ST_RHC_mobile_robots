@@ -13,19 +13,26 @@ The code was tested on Matlab 2020a environment. It requires the Ellipsoidal Too
 To reproduce the experiments discussed in the paper, see **Khepera_IV_TCP** folder, a Khepera IV robot is required. The script implements a Bluetooth client that sends velocity commands to the robot in order to make it track a desired trajectory (eight-shaped and circular tractories are currently available). For further details refer to the paper.
 
 
-# File Descriptions 
+# File Descriptions (Simulation)
 - ST_FL_Trajectory_Tracking_Differential_Drive_CDC23.m: It's the main script that simulates the Trajectory tracking Set-Theoretic strategy.
-- one_step_ellipsoidal_reachable_set.m: It's a Matlab function used to implement the offline phase of the algorithm. It computes the one-step reachable set starting from a giving ellipsoidal set whose shaping matrix is given (see the full paper for further details). 
+- one_step_ellipsoidal_reachable_set.m: It's a Matlab function used to implement the offline phase of the algorithm. It computes the one-step reachable set starting from a given ellipsoidal set whose shaping matrix is given (see the full paper for further details). 
 - online_phase_CDC.m: It's a Matlab function that implements the online phase optimization (see Eqs (25a)-(25b) in the full paper for further details).
 - online_terminal_optim.m: It implements optimization (27) (see full paper for further details)
 - DiffDrive.m: It's a Matlab function that implements the unicycle kinematics. It's used by the method ode45 to solve the differential equations describing the mobile robot's motion in the plane.
-  
+
+# File Descriptions (Experiment)
+- Khepera_IV_TCP/Khepera_iv_ST_disturbance_traj_track.m: It's the main script used to perform the experiment described in the paper.  
+- Khepera_IV_TCP/Khepera4.m: It represents the core of the application. It is a Matlab class that implements the main communication functionalities between the tracking controller running on Matlab and the server running on Khepera IV
+- Khepera_IV_TCP/STTT_control_parameters.m: It's a Matlab class defining the parameters needed by the proposed tracking controller.
+- Khepera_IV_TCP/"eight_traj_generation.m" implements the reference eight-shaped trajectory. 
 
 
-# Demo 
-- Connect KheperaIV to the host machine through Bluetooth and set the right port on the script "Khepera_iv_FL_RHC_traj_track.m".
-- Run the Bluetooth server on the KheperaIV side and then, run the script Khepera_iv_FL_RHC_traj_track.m
+# Demo (Simulation)
+- Run "ST_FL_Trajectory_Tracking_Differential_Drive_CDC23.m"
+
+# Demo (Experiment)
+- Connect KheperaIV to the host machine through Bluetooth and set the right port on the script "Khepera_IV_TCP/Khepera_iv_ST_disturbance_traj_track.m".
+- Run the Bluetooth server on the KheperaIV side and then, run the script  "Khepera_IV_TCP/Khepera_iv_ST_disturbance_traj_track.m".
 
 # Videos
 - https://www.youtube.com/watch?v=A0Tlbgr08tY&ab_channel=PreCySeGroup
-- https://www.youtube.com/watch?v=L3wmg-pHx_4&list=PLh-6B_s-jPuT8RTDOJM96GXu4y1IBIeoC&ab_channel=PreCySeGroup
