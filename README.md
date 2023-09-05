@@ -1,15 +1,16 @@
 # Trajectory tracking Set Theoretic Receding Horizon Control (T-ST-RHC)  for KheperaIV differential-drive robot. 
 Code developed for the work published in "C. Tiriolo, W. Lucia - A Set-Theoretic Control Approach to the Trajectory Tracking Problem for Input-Output Linearized Wheeled Mobile Robots  - CDC - LCSS 2023"
-
 Full paper at: https://doi.org/10.1109/LCSYS.2023.3286774
+The code validates the strategy developed in the above paper by means of both simulations and experiments.
 
 
 # Trajectory Tracking Problem Formulation 
-Consider a **Khepera IV** differential-drive robot subject to input constraints, i.e., limits on the admissible wheels' angular velocities, and a bounded trajectory $r(t)$. Design a feedback control law $[\omega_{R}(t),\omega_{L}(t)]^T=\phi(\left[p_c(t)^T,\theta(t)\right]^T,r(t))$ such that the tracking error $\xi(t)=r(t)-p_c(t)$ is bounded.
+Consider the input-constrained differential-drive robot and a bounded and smooth trajectory $q_r(k)=\left[x_r(k),y_r(k),\theta_r(k)\right]^T$
+Design a trajectory tracking control law $[\omega_{R}(k),\omega_{L}(k)]^T=\phi(k,q(k),q_r(k))\in\mathcal{U}_d$ such that the tracking error $\tilde{q}(k)=q(k)-q_r(k)$ remains bounded $\forall k\geq 0$.
 
 # Prerequisites 
-The code was tested on Matlab 2020a environment and it requires a Khepera IV robot (see https://www.k-team.com/khepera-iv) to run. 
-The code implements a Bluetooth client that sends velocity commands to the robot in order to make it track a desired trajectory (eight-shaped and circular tractories are currently available). For further details refer to the paper.
+The code was tested on Matlab 2020a environment. It requires the Ellipsoidal Toolbox ET  (https://www.mathworks.com/matlabcentral/fileexchange/21936-ellipsoidal-toolbox-et). 
+To reproduce the experiments discussed in the paper, implemented in the file Khepera_iv_ST_disturbance_traj_track.m, a Khepera IV robot is required. The script implements a Bluetooth client that sends velocity commands to the robot in order to make it track a desired trajectory (eight-shaped and circular tractories are currently available). For further details refer to the paper.
 
 
 # File Descriptions 
