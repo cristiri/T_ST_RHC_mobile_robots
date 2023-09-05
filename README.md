@@ -9,7 +9,7 @@ Consider the input-constrained differential-drive robot and a bounded and smooth
 Design a trajectory tracking control law $[\omega_{R}(k),\omega_{L}(k)]^T=\phi(k,q(k),q_r(k))\in\mathcal{U}_d$ such that the tracking error $\tilde{q}(k)=q(k)-q_r(k)$ remains bounded $\forall k\geq 0$.
 
 # Prerequisites 
-The code was tested on Matlab 2020a environment. It requires the Ellipsoidal Toolbox ET  (https://www.mathworks.com/matlabcentral/fileexchange/21936-ellipsoidal-toolbox-et). 
+The code was tested on Matlab 2022a environment. It requires the Ellipsoidal Toolbox ET  (https://www.mathworks.com/matlabcentral/fileexchange/21936-ellipsoidal-toolbox-et). 
 To reproduce the experiments discussed in the paper, see **Khepera_IV_TCP** folder, a Khepera IV robot is required. The script implements a Bluetooth client that sends velocity commands to the robot in order to make it track a desired trajectory (eight-shaped and circular tractories are currently available). For further details refer to the paper.
 
 
