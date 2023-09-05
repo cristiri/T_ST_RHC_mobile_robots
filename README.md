@@ -16,11 +16,11 @@ To reproduce the experiments discussed in the paper, see **Khepera_IV_TCP** fold
 # File Descriptions 
 - ST_FL_Trajectory_Tracking_Differential_Drive_CDC23.m: It's the main script that simulates the Trajectory tracking Set-Theoretic strategy.
 - one_step_ellipsoidal_reachable_set.m: It's a Matlab function used to implement the offline phase of the algorithm. It computes the one-step reachable set starting from a giving ellipsoidal set whose shaping matrix is given (see the full paper for further details). 
-- online_phase_CDC.m: It's a Matlab function that implements the online phase optimization (see the full paper for further details).
+- online_phase_CDC.m: It's a Matlab function that implements the online phase optimization (see Eqs (25a)-(25b) in the full paper for further details).
+- online_terminal_optim.m: It implements optimization (27) (see full paper for further details)
+- DiffDrive.m: It's a Matlab function that implements the unicycle kinematics. It's used by the method ode45 to solve the differential equations describing the mobile robot's motion in the plane.
   
-- Khepera4.m: It represents the core of the application. It is a Matlab class that implements the main communication functionalities between the tracking controller running on Matlab and the server running on Khepera IV
-- STTT_control_parameters.m: It's a Matlab class defining the parameters needed by the proposed tracking controller.
-- "eight_traj_generation.m" and "circular_traj_generation.m" implements the reference trajectory, an eight-shaped and a circular one, respectively.
+
 
 # Demo 
 - Connect KheperaIV to the host machine through Bluetooth and set the right port on the script "Khepera_iv_FL_RHC_traj_track.m".
