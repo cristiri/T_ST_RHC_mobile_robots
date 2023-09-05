@@ -10,7 +10,7 @@ Design a trajectory tracking control law $[\omega_{R}(k),\omega_{L}(k)]^T=\phi(k
 
 # Prerequisites 
 The code was tested on Matlab 2020a environment. It requires the Ellipsoidal Toolbox ET  (https://www.mathworks.com/matlabcentral/fileexchange/21936-ellipsoidal-toolbox-et). 
-To reproduce the experiments discussed in the paper, implemented in the file Khepera_iv_ST_disturbance_traj_track.m, a Khepera IV robot is required. The script implements a Bluetooth client that sends velocity commands to the robot in order to make it track a desired trajectory (eight-shaped and circular tractories are currently available). For further details refer to the paper.
+To reproduce the experiments discussed in the paper, # Khepera_IV_TCP #  , a Khepera IV robot is required. The script implements a Bluetooth client that sends velocity commands to the robot in order to make it track a desired trajectory (eight-shaped and circular tractories are currently available). For further details refer to the paper.
 
 
 # File Descriptions 
